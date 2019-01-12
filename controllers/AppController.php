@@ -2,11 +2,14 @@
 
 class AppController
 {
+    const UPLOAD_DIRECTORY = '/public/upload/';
+
     private $request = null;
 
     public function __construct()
     {
         $this->request = strtolower($_SERVER['REQUEST_METHOD']);
+        session_start();
     }
 
     public function isGet()
