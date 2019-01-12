@@ -1,8 +1,7 @@
 <?php
 
 require_once('controllers/DefaultController.php');
-require_once('controllers/UploadController.php');
-require_once('controllers/PlayerController.php');
+
 
 class Routing
 {
@@ -22,15 +21,8 @@ class Routing
             'logout' => [
                 'controller' => 'DefaultController',
                 'action' => 'logout'
-            ],
-            'upload' => [
-                'controller' => 'UploadController',
-                'action' => 'upload'
-            ],
-            'player' => [
-                'controller' => 'PlayerController',
-                'action' => 'player'
             ]
+
         ];
     }
 
