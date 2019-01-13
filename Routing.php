@@ -25,7 +25,11 @@ class Routing
             'search' => [
                 'controller' => 'SearchController',
                 'action' => 'search'
-            ]
+            ],
+            'add' => [
+                'controller' => 'SearchController',
+                'action' => 'add'
+    ]
 
         ];
     }

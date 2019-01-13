@@ -20,14 +20,16 @@ class SearchController extends AppController{
             $book = $mapper->getBook($_POST['book_title']);         //dostajemy od posta book_title
 
 
-
-
-            //$this->render('search', ['message' => ['Email not recognized']]);
-            $this->render('search', ['name' => [$book->getName()], 'author' => [$book->getAuthor()]]);
+            $this->render('search', ['name' => [$book->getName()], 'author' => [$book->getAuthor()], 'book_id' => [$book->getId()]]);
         }
         else
              $this->render('search');
 
+    }
+    public function add(){
+        $mapper = new BookMapper();
+        $book = $book = $mapper->getBook($_SESSION["last_book_name"]);
+        die($book->getAuthor());                                        //teraz
     }
 
 }
