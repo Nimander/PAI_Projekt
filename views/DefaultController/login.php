@@ -4,7 +4,14 @@
 <?php include(dirname(__DIR__).'/head.html') ?>
 
 <body>
-
+<ul class="blue" >
+    <li><a href="?page=index" title="home" class="current"><span>Strona główna</span></a></li>
+    <li><a href="#" title="products"><span>Wyszukaj</span></a></li>
+    <li><a href="#" title="contact"><span>O nas</span></a></li>
+    <li><a href="#" title="contact"><span>Regulamin</span></a></li>
+    <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
+    <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
+</ul>
 <div class="container">
     <div clas="row">
         <div class="col-sm-6 offset-sm-3">

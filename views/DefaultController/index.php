@@ -33,21 +33,28 @@
 <!---->
 <!--</html>-->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<?php include(dirname(__DIR__).'/head.html') ?>
+<!DOCTYPE html>
+<html>
+<?php include(dirname(__DIR__) . '/head.html') ?>
 
 <body>
 
-
-
 <ul class="blue">
-    <li><a href="#" title="home" class="current"><span>home</span></a></li>
-    <li><a href="#" title="products"><span>products</span></a></li>
-    <li><a href="#" title="blog"><span>blog</span></a></li>
-    <li><a href="#" title="contact"><span>contact</span></a></li>
-</ul>
+    <li><a href="?page=index" title="home" class="current"><span>Strona główna</span></a></li>
+    <li><a href="#" title="products"><span>Wyszukaj</span></a></li>
+    <li><a href="#" title="contact"><span>O nas</span></a></li>
+    <li><a href="#" title="contact"><span>Regulamin</span></a></li>
+    <?php
+    if(isset($_SESSION) && !empty($_SESSION) && $_SESSION["id"]){   //jezeli nie zalogowany
+        ?>
+        <li><a href="?page=logout" title="contact"><span>Wyloguj się</span></a></li>
+        <p> zalogowany </p>
 
+    <?php } else {?>
+        <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
+        <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
+    <?php } ?>
+</ul>
 
 </body>
 </html>

@@ -1,84 +1,16 @@
 body {
-    font-family: Verdana;
-    font-size: 10pt;
-    margin-top: 80px !important;
-
+    padding: 50px;
+    margin: 0;
 }
-
-h1 {
-    color: darkblue;
-}
-
-body {
-    height:801px;
-    padding-left:40px;
-    background-color: darkblue;
-}
-
-div {
-    width:130px;
-    height:40px;
-    border:1px solid black;
-    border-radius: 10px;
-    font:bold 22px/40px Arial,Sans-Serif;
-    color:black;
-    text-align:center;
-}
-
-#turquise{ background-color: lightseagreen;}
-
-/*#blue{ background-color: dodgerblue;}*/
-
-#violet{ background-color: mediumorchid;}
-
-#orange{ background-color: darkorange;}
-
-#red{ background-color: tomato;}
-
-#yellow{ background-color: orange;}
-
-.static {
-    position:static;
-}
-
-.relative {
-    position:relative;
-    top:20px;
-    left:20px;
-}
-
-.absolute {
-    position:absolute;
-    top:20px;
-    left:120px;
-}
-
-.fixed {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-}
-
-.login_button{
-    position:absolute;
-    top:20px;
-    left:300px;
-    width:130px;
-    background-color:navajowhite;
-}
-.register_button{
-    position:absolute;
-    top:20px;
-    left:450px;
-    width:170px;
-}
-
 
 ul {
     padding: 5px;
     margin: 10px 0;
     list-style: none;
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7e7;
     float: left;
+    clear: left;
 }
 
 ul li {
@@ -102,11 +34,15 @@ ul li a span {
     float:left;
 }
 
+
+
+/*BLUE*/
 ul.blue li a.current, ul.blue li a:hover {
-    background: url("/resources/blue.png") no-repeat top right;
+    background: url("../../resources/blue.png") no-repeat top right;
     color: #0d5f83;
 }
 
 ul.blue li a.current span, ul.blue li a:hover span {
-    background: url("/resources/blue.png") no-repeat top left;
+    background: url("../../resources/blue.png") no-repeat top left;
 }
+
