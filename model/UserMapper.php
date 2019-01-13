@@ -1,7 +1,7 @@
 <?php
 
 require_once 'User.php';
-require_once __DIR__.'/../Database.php';
+require_once __DIR__ . '/../Database.php';
 
 class UserMapper
 {
@@ -12,9 +12,8 @@ class UserMapper
         $this->database = new Database();
     }
 
-    public function getUser(
-        string $email
-    ):User {
+    public function getUser(string $email): User
+    {
         try {
             $stmt = $this->database->connect()->prepare('SELECT * FROM mszymanski.Users WHERE email = :email;');
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -23,8 +22,7 @@ class UserMapper
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             return new User($user['name'], $user['surname'], $user['email'], $user['password']);
-        }
-        catch(PDOException $e) {
+        } catch (PDOException $e) {
             return 'Error: ' . $e->getMessage();
         }
     }

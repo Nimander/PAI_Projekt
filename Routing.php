@@ -1,7 +1,7 @@
 <?php
 
 require_once('controllers/DefaultController.php');
-
+require_once('controllers/SearchController.php');
 
 class Routing
 {
@@ -21,6 +21,10 @@ class Routing
             'logout' => [
                 'controller' => 'DefaultController',
                 'action' => 'logout'
+            ],
+            'search' => [
+                'controller' => 'SearchController',
+                'action' => 'search'
             ]
 
         ];
