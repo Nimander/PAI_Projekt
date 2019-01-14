@@ -2,7 +2,7 @@
 
 require_once('controllers/DefaultController.php');
 require_once('controllers/SearchController.php');
-
+require_once('controllers/CartController.php');
 class Routing
 {
     public $routes = [];
@@ -30,9 +30,9 @@ class Routing
                 'controller' => 'SearchController',
                 'action' => 'add'
             ],
-            'order' => [
-                'controller' => 'OrderController',
-                'action' => 'order'
+            'cart' => [         //pokaze liste ksiazek w koszyku
+                'controller' => 'CartController',
+                'action' => 'cart'
             ]
 
         ];
