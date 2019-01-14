@@ -30,5 +30,5 @@ echo '<pre>'; print_r($books); echo '</pre>';
     ?>
 
 <form action="?page=address" method="POST">
-    <input type="submit" value="dodaj do koszyka" class="btn btn-primary btn-lg float-right" />
+    <input type="submit" value="Zamów" class="btn btn-primary btn-lg float-right" />
 </form>

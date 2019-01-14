@@ -56,7 +56,7 @@
 
 <?php if(isset($name)){ ?>
     <form action="?page=add" method="POST">
-           <input type="submit" value="dodaj do koszyka" class="btn btn-primary btn-lg float-right" />
+           <input type="submit" value="Dodaj do koszyka" class="btn btn-primary btn-lg float-right" />
     </form>
 <?php } ?>
 

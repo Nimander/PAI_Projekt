@@ -42,6 +42,10 @@ class Routing
             'order' =>[
                 'controller' => 'OrderController',
                 'action' => 'order'
+            ],
+            'orders' => [
+                'controller' => 'OrderController',
+                'action' => 'orders'
             ]
 
 

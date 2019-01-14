@@ -25,4 +25,18 @@ class AddressMapper
             return 'Error: ' . $e->getMessage();
         }
     }
+
+    public function addNewAddress(string $city, string $street, string $postcode){
+        try {
+            $stmt = $this->database->connect()->prepare('insert into mszymanski.address (city, street, postcode) values (:city, :street, :postcode)');
+            $stmt->bindParam(':city', $city, PDO::PARAM_STR);
+            $stmt->bindParam(':street', $street, PDO::PARAM_STR);
+            $stmt->bindParam(':postcode', $postcode, PDO::PARAM_STR);
+            $stmt->execute();
+
+
+        } catch (PDOException $e) {
+            return 'Error: ' . $e->getMessage();
+        }
+    }
 }

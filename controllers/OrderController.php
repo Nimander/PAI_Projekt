@@ -20,8 +20,9 @@ class OrderController extends AppController
         //odebranie adresu z posta
         $addressID = $addressmapper->getNewAddressID();
        // print_r($_POST['City']);                      //tak sie dostac do poasta
-        die("OK");
+        $addressmapper->addNewAddress($_POST['City'], $_POST['Street'], $_POST['PostCode']);
 
+        //teraz adres jest w bazie
 
 
         $order = unserialize($_SESSION['order']);
@@ -34,7 +35,7 @@ class OrderController extends AppController
         $orderID = $ordermapper->getNewOrderID();   //ten numer trzeba przypisac ksiazkom
 
         //teraz tworzymy rzad w Orders
-        $ordermapper->createOrderInDB($userEmail, 1);
+        $ordermapper->createOrderInDB($userEmail, $addressID);
 
 
         foreach ($books as $book) {     //trzeba sprawdzic czy kazda jest dostepna
@@ -43,6 +44,8 @@ class OrderController extends AppController
             $bookmapper->setOrderNrToBook($bookId, $orderID);
 
         }
+        $url = "http://$_SERVER[HTTP_HOST]/";
+        header("Location: {$url}/pai_projekt/?page=index");
     }
 
     public function address(){
