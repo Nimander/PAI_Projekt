@@ -35,10 +35,16 @@ class Routing
                 'controller' => 'CartController',
                 'action' => 'cart'
             ],
-            'order' => [
+            'address' => [
+                'controller' => 'OrderController',
+                'action' => 'address'
+            ],
+            'order' =>[
                 'controller' => 'OrderController',
                 'action' => 'order'
             ]
+
+
 
 
         ];

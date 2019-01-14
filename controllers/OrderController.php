@@ -6,6 +6,8 @@ require_once __DIR__.'/../model/BookMapper.php';
 require_once __DIR__.'/../model/Book.php';
 require_once __DIR__.'/../model/OrderMapper.php';
 require_once __DIR__.'/../model/Order.php';
+require_once __DIR__.'/../model/Address.php';
+require_once __DIR__.'/../model/AddressMapper.php';
 class OrderController extends AppController
 {
     public function __construct()
@@ -14,6 +16,14 @@ class OrderController extends AppController
     }
 
     public function order(){
+        $addressmapper = new AddressMapper();
+        //odebranie adresu z posta
+        $addressID = $addressmapper->getNewAddressID();
+       // print_r($_POST['City']);                      //tak sie dostac do poasta
+        die("OK");
+
+
+
         $order = unserialize($_SESSION['order']);
         $userEmail = $_SESSION['id'];
         $books = $order->getBooks();
@@ -30,8 +40,12 @@ class OrderController extends AppController
         foreach ($books as $book) {     //trzeba sprawdzic czy kazda jest dostepna
             $bookName = $book->getName();   //dziala
             $bookId = $bookmapper->getAvaibleBookId($bookName);
-            print_r($bookId);
+            $bookmapper->setOrderNrToBook($bookId, $orderID);
 
         }
+    }
+
+    public function address(){
+        $this->render('address');
     }
 }

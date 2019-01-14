@@ -42,4 +42,14 @@ class BookMapper
             return 'Error: ' . $e->getMessage();
         }
     }
+
+    public function setOrderNrToBook(int $bookID, int $orderID)
+    {
+        print_r("a");
+        $stmt = $this->database->connect()->prepare('update mszymanski.book_eg set book_eg.orderID = :orderID where book_eg.id = :bookID');
+        $stmt->bindParam(':bookID', $bookID, PDO::PARAM_STR);
+        $stmt->bindParam(':orderID', $orderID, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
 }
