@@ -4,6 +4,7 @@ require_once('controllers/DefaultController.php');
 require_once('controllers/SearchController.php');
 require_once('controllers/CartController.php');
 require_once('controllers/OrderController.php');
+require_once('controllers/RegisterController.php');
 class Routing
 {
     public $routes = [];
@@ -46,6 +47,10 @@ class Routing
             'orders' => [
                 'controller' => 'OrderController',
                 'action' => 'orders'
+            ],
+            'register' => [
+                'controller' => 'DefaultController',
+                'action' => 'register'
             ]
 
 

@@ -54,7 +54,7 @@
 
     <?php } else {?>
         <li><a href="?page=login" title=""><span>Zaloguj się</span></a></li>
-        <li><a href="#" title=""><span>Załóż konto</span></a></li>
+        <li><a href="?page=register" title=""><span>Załóż konto</span></a></li>
     <?php } ?>
 </ul>
 

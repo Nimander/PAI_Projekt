@@ -10,7 +10,7 @@
     <li><a href="#" title="contact"><span>O nas</span></a></li>
     <li><a href="#" title="contact"><span>Regulamin</span></a></li>
     <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
-    <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
+    <li><a href="?page=register" title="contact"><span>Załóż konto</span></a></li>
 </ul>
 <br><br><br><br><br>
 
