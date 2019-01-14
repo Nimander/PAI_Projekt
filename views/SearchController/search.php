@@ -56,12 +56,20 @@
 
             <?php if(isset($name)): ?>
                 <?php foreach($name as $item): ?>
-                    <div><?= $item ?></div>
+                    <?php echo "Tytuł:"?>
+                    <?= $item ?>
                 <?php endforeach; ?>
             <?php endif; ?>
             <?php if(isset($author)): ?>
                 <?php foreach($author as $item): ?>
-                    <div><?= $item ?></div>
+                    <?php echo "<br>Autor:"?>
+                    <?= $item ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if(isset($price)): ?>
+                <?php foreach($price as $item): ?>
+                    <?php echo "<br>Cena:"?>
+                    <?= $item ?>
                 <?php endforeach; ?>
             <?php endif; ?>
 

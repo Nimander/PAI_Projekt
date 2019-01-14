@@ -31,13 +31,19 @@ Twój koszyk:
 <?php
     $order = unserialize($_SESSION['order']);
     $books = $order->getBooks();
+    $sum = 0;
     foreach($books as $book){
         echo "Tytuł: ";
         print_r($book->getName());
-        echo "<br>Autor:";
+        echo "<br>Autor: ";
         print_r($book->getAuthor());
+        echo "<br>Cena: ";
+        print_r($book->getPrice());
         echo"<br><br>";
+        $sum += $book->getPrice();
     }
+    echo "Suma: ";
+    print_r($sum);
     ?>
 <div>
 

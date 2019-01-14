@@ -5,14 +5,14 @@ class Book
     private $id;
     private $name;
     private $author;
-    private $inmagazine;
+    private $price;
 
-     public function __construct($id, $name, $author, $inmagazine)
+     public function __construct($id, $name, $author, $price)
     {
         $this->id = $id;
         $this->name = $name;
         $this->author = $author;
-        $this->inmagazine = $inmagazine;
+        $this->price = $price;
     }
 
 
@@ -46,14 +46,14 @@ class Book
         $this->author = $author;
     }
 
-    public function getInmagazine()
+    public function getPrice()
     {
-        return $this->inmagazine;
+        return $this->price;
     }
 
-    public function setInmagazine($inmagazine): void
+    public function setPrice($price): void
     {
-        $this->inmagazine = $inmagazine;
+        $this->price = $price;
     }
 
 

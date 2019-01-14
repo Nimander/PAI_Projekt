@@ -23,7 +23,7 @@ class SearchController extends AppController{
             $book = $mapper->getBook($_POST['book_title']);         //dostajemy od posta book_title
 
 
-            $this->render('search', ['name' => [$book->getName()], 'author' => [$book->getAuthor()], 'book_id' => [$book->getId()]]);
+            $this->render('search', ['name' => [$book->getName()], 'author' => [$book->getAuthor()], 'book_id' => [$book->getId()], 'price' =>[$book->getPrice()]]);
         }
         else
              $this->render('search');

@@ -5,26 +5,26 @@
 <body>
 
 <ul class="blue">
-    <li><a href="?page=index" title="home" class="current"><span>Strona główna</span></a></li>
-    <li><a href="?page=search" title="products"><span>Wyszukaj</span></a></li>
-    <li><a href="#" title="contact"><span>O nas</span></a></li>
-    <li><a href="#" title="contact"><span>Regulamin</span></a></li>
+    <li><a href="?page=index" title="" class="current"><span>Strona główna</span></a></li>
+    <li><a href="?page=search" title=""><span>Wyszukaj</span></a></li>
+    <li><a href="#" title=""><span>O nas</span></a></li>
+    <li><a href="#" title=""><span>Regulamin</span></a></li>
     <?php
     if(isset($_SESSION) && !empty($_SESSION) && $_SESSION["id"]){   //jezeli nie zalogowany
         ?>
-        <li><a href="?page=cart" title="contact"><span>Koszyk</span></a></li>
-        <li><a href="?page=logout" title="contact"><span>Wyloguj się</span></a></li>
-        <p> zalogowany </p>
+        <li><a href="?page=cart" title=""><span>Koszyk</span></a></li>
+        <li><a href="?page=logout" title=""><span>Wyloguj się</span></a></li>
+
 
     <?php } else {?>
-        <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
-        <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
+        <li><a href="?page=login" title=""><span>Zaloguj się</span></a></li>
+        <li><a href="#" title=""><span>Załóż konto</span></a></li>
     <?php } ?>
 </ul>
+<br><br><br><br><br>
 
-<div class="container">
     <div clas="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-4 offset-sm-0">
             <h1>Podaj adres</h1>
             <hr>
             <form action="?page=order" method="POST">
@@ -52,8 +52,7 @@
                         <input type="text" class="form-control" name="PostCode"  id="inputPostCode" placeholder="PostCode" required/>
                     </div>
                 </div>
-                <input type="submit" value="Zamow" class="btn btn-primary btn-lg float-right" />
+                <input type="submit" value="Zamów" class="btn btn-primary btn-lg float-right" />
             </form>
         </div>
     </div>
-</div>

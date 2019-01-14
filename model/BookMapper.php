@@ -22,11 +22,13 @@ class BookMapper
 
             $book = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            return new Book($book['id'], $book['name'], $book['author'], $book['inmagazine']);
+            return new Book($book['id'], $book['name'], $book['author'], $book['price']);
         } catch (PDOException $e) {
             return 'Error: ' . $e->getMessage();
         }
     }
+
+
 
     public function getAvaibleBookId(string $name): int
     {
