@@ -3,6 +3,7 @@
 require_once('controllers/DefaultController.php');
 require_once('controllers/SearchController.php');
 require_once('controllers/CartController.php');
+require_once('controllers/OrderController.php');
 class Routing
 {
     public $routes = [];
@@ -33,7 +34,12 @@ class Routing
             'cart' => [         //pokaze liste ksiazek w koszyku
                 'controller' => 'CartController',
                 'action' => 'cart'
+            ],
+            'order' => [
+                'controller' => 'OrderController',
+                'action' => 'order'
             ]
+
 
         ];
     }
