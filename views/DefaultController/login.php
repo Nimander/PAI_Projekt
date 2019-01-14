@@ -12,9 +12,10 @@
     <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
     <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
 </ul>
-<div class="container">
+<br><br><br><br><br>
+
     <div clas="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-3 offset-sm-0">
             <h1>LOGIN</h1>
             <hr>
             <?php if(isset($message)): ?>
@@ -40,11 +41,11 @@
                         <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password" type="password" required/>
                     </div>
                 </div>
-                <input type="submit" value="Sign in" class="btn btn-primary btn-lg float-right" />
+                <input type="submit" value="Zaloguj się" class="btn btn-primary btn-lg float-right" />
             </form>
         </div>
     </div>
-</div>
+
 
 </body>
 </html>

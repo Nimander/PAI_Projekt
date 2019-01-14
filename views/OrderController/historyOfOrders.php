@@ -34,11 +34,7 @@
 
     $orders = unserialize($_SESSION['orders']);
     foreach ($orders as $order) {
-//        $book2 = $book[0];
-//        echo "Tytul: ";
-//        print_r($book2['name']);
-//        echo "<br>Autor: ";
-//        print_r($book2['author']);
+
         foreach ($order as $book){
 
             echo "Tytul: ";

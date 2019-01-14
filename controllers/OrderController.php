@@ -46,6 +46,7 @@ class OrderController extends AppController
             $bookmapper->setOrderNrToBook($bookId, $orderID);
 
         }
+        //$_SESSION['order'] = 0;///////////////////////////////////////////////
         $url = "http://$_SERVER[HTTP_HOST]/";
         header("Location: {$url}/pai_projekt/?page=index");
     }
