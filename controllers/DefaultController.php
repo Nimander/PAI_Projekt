@@ -40,7 +40,8 @@ class DefaultController extends AppController
             } else {
                 $_SESSION["id"] = $user->getEmail();
                 $_SESSION["role"] = $user->getRole();
-
+                $order = new Order($user);
+                $_SESSION["order"] = serialize($order);                         //zaserializowany order
                 $url = "http://$_SERVER[HTTP_HOST]/";
                 header("Location: {$url}/pai_projekt/?page=index");
                 exit();

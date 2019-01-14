@@ -47,6 +47,7 @@
     <?php
     if(isset($_SESSION) && !empty($_SESSION) && $_SESSION["id"]){   //jezeli nie zalogowany
         ?>
+        <li><a href="?page=order" title="contact"><span>Koszyk</span></a></li>
         <li><a href="?page=logout" title="contact"><span>Wyloguj się</span></a></li>
         <p> zalogowany </p>
 
@@ -55,6 +56,16 @@
         <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
     <?php } ?>
 </ul>
+<?php
+if(isset($_SESSION) && !empty($_SESSION)) {
+    print_r($_SESSION);
+}
+?>
+<?php
+$order = unserialize($_SESSION['order']);
+$results = $order->getBooks();
+echo '<pre>'; print_r($results); echo '</pre>';
+ ?>
 
 </body>
 </html>

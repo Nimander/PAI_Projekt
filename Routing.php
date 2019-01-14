@@ -29,7 +29,11 @@ class Routing
             'add' => [
                 'controller' => 'SearchController',
                 'action' => 'add'
-    ]
+            ],
+            'order' => [
+                'controller' => 'OrderController',
+                'action' => 'order'
+            ]
 
         ];
     }
