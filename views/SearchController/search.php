@@ -14,27 +14,40 @@
     if(isset($_SESSION) && !empty($_SESSION) && $_SESSION["id"]){   //jezeli nie zalogowany
         ?>
         <li><a href="?page=logout" title="contact"><span>Wyloguj się</span></a></li>
-        <p> zalogowany </p>
+
 
     <?php } else {?>
         <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
         <li><a href="#" title="contact"><span>Załóż konto</span></a></li>
     <?php } ?>
 </ul>
+
+
 <br>
-<form action="?page=search" method="POST">
-    <div class="form-group row">
-        <label for="inputEmail" class="col-sm-1 col-form-label">
-            <i class="material-icons md-48">booooktitle</i>
-        </label>
-        <div class="col-sm-11">
-            <input class="form-control" id="inputEmail" name="book_title" placeholder="book_title" required/>
+<br>
+<br><br><br><br><br>
+<div>
+    <div class="container">
+        <div clas="row">
+            <div class="col-sm-6 offset-sm-0">
+                <h1>Wyszukaj książkę</h1>
+                <hr>
+                    <form action="?page=search" method="POST">
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-1 col-form-label">
+                                <i class="material-icons md-48">booooktitle</i>
+                            </label>
+                            <div class="col-sm-11">
+                                <input class="form-control" id="inputEmail" name="book_title" placeholder="book_title" required/>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Szukaj" class="btn btn-primary btn-lg float-right" />
+                    </form>
+            </div>
         </div>
     </div>
-
-    <input type="submit" value="Szukaj" class="btn btn-primary btn-lg float-right" />
-</form>
-
+</div>
 
 
 <?php if(isset($name)): ?>

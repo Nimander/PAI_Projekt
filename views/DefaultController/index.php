@@ -50,7 +50,7 @@
         <li><a href="?page=cart" title="contact"><span>Koszyk</span></a></li>
         <li><a href="?page=orders" title="contact"><span>Twoje Zamowienia</span></a></li>
         <li><a href="?page=logout" title="contact"><span>Wyloguj się</span></a></li>
-        <p> zalogowany </p>
+
 
     <?php } else {?>
         <li><a href="?page=login" title="blog"><span>Zaloguj się</span></a></li>
