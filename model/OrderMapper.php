@@ -94,11 +94,13 @@ class OrderMapper
             $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $ordersList = array();
+            $priceList = array();
             foreach ($orders as $order) {
                 //trzeba pobrac ksiazki
                 $books = [];
                 $orderID = $order['id'];
-                //print_r($orderID);
+                //print_r($order);
+
                 $stmt2 = $this->database->connect()->prepare('SELECT book.name, book.author FROM book, book_eg where book_eg.orderID = :orderID and book_eg.bookID = book.id  ');
                 $stmt2->bindParam(':orderID', $orderID, PDO::PARAM_STR);
 
@@ -107,11 +109,18 @@ class OrderMapper
 
                 $ordersList[] = $orders2;
 
+                ////////////////////////// pobieranie cen zamowienia
+                $stmt = $this->database->connect()->prepare('SELECT sum(price) FROM  mszymanski.book, mszymanski.book_eg where orderID = :orderID and book_eg.bookID = book.id ');
+                $stmt->bindParam(':orderID', $orderID, PDO::PARAM_STR);
+                $stmt->execute();
+                $price = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-                //$ordersList[] = new OrderToList()
+                $priceList[] = $price;
+                ////////////
 
             }
+            $_SESSION['prices'] = serialize($priceList);
             $_SESSION['orders'] = serialize($ordersList);
 
 

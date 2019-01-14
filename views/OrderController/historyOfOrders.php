@@ -27,25 +27,33 @@
 
 <br>
 <br>
-<b>Twoje zamowione ksiazki</b>
+<span style="font-size: x-large; "><b>Twoje zamowienia</b></span>
+
 <br>
 <br>
 <?php
 
     $orders = unserialize($_SESSION['orders']);
+    $prices = unserialize($_SESSION['prices']);
+
+    $i = 0;
     foreach ($orders as $order) {
 
         foreach ($order as $book){
 
-            echo "Tytul: ";
+            echo "<b>Tytul: </b>";
             print_r($book['name']);
-            echo "<br>Autor: ";
+            echo "<br><b>Autor: </b> ";
             print_r($book['author']);
             echo"<br>";
 
         }
+        echo "<b>CENA: </b>";
+        print_r($prices[$i]['sum(price)']);
+        echo "zł";
+        $i++;
 
-        echo "<br>";
+        echo "<br><br>";
     }
 
 
