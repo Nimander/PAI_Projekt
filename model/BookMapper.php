@@ -32,11 +32,8 @@ class BookMapper
 
     public function getAvaibleBookId(string $name): int
     {
-        try {   //////////////////////////
-            ///
-            /// //////////left join
-            /// ////////////////////
-            $stmt = $this->database->connect()->prepare('SELECT min(book_eg.id) FROM  mszymanski.book_eg, mszymanski.book WHERE  book_eg.bookID = book.id and book.name like :name and book_eg.orderID is null; ;');
+        try {
+            $stmt = $this->database->connect()->prepare('SELECT min(book_eg.id) FROM mszymanski.book_eg join mszymanski.book on book_eg.bookID = book.id and book.name like :name and book_eg.orderID is null;');
             $stmt->bindParam(':name', $name, PDO::PARAM_STR);
             $stmt->execute();
             $book_eg = $stmt->fetch(PDO::FETCH_ASSOC);
