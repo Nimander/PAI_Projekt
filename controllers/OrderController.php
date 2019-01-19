@@ -36,7 +36,7 @@ class OrderController extends AppController
 
         $orderID = $ordermapper->getNewOrderID();   //ten numer trzeba przypisac ksiazkom
 
-        //teraz tworzymy rzad w Orders
+        //teraz  tworzymy rzad w Orders
         $ordermapper->createOrderInDB($userEmail, $addressID);
 
 
