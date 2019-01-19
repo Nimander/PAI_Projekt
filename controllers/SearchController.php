@@ -21,8 +21,10 @@ class SearchController extends AppController{
 
         if ($this->isPost()) {
             $book = $mapper->getBook($_POST['book_title']);         //dostajemy od posta book_title
-
-
+            //print_r($book);
+            //die("OK");
+            if($book->getName() == null)
+                return $this->render('search');
             $this->render('search', ['name' => [$book->getName()], 'author' => [$book->getAuthor()], 'book_id' => [$book->getId()], 'price' =>[$book->getPrice()]]);
         }
         else
@@ -30,7 +32,7 @@ class SearchController extends AppController{
 
     }
 
-    public function add(){      //to jest tylko dodawanie do koszyka, tylko dodaje do $_SESSION
+    public function add(){      //to jest tylko dodawanie do koszyka
         $bookmapper = new BookMapper();
 //        $usermapper = new UserMapper();
 //

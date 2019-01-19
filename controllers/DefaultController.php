@@ -2,8 +2,8 @@
 
 require_once "AppController.php";
 
-require_once __DIR__.'/../model/User.php';
-require_once __DIR__.'/../model/UserMapper.php';
+require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../model/UserMapper.php';
 
 
 class DefaultController extends AppController
@@ -31,11 +31,11 @@ class DefaultController extends AppController
 
             $user = $mapper->getUser($_POST['email']);
 
-            if(!$user) {
+            if (!$user) {
                 return $this->render('login', ['message' => ['Email not recognized']]);
             }
 
-            if ($user->getPassword() !== $_POST['password']) {
+            if ($user->getPassword() !== md5($_POST['password'])) {
                 return $this->render('login', ['message' => ['Wrong password']]);
             } else {
                 $_SESSION["id"] = $user->getEmail();
@@ -52,26 +52,19 @@ class DefaultController extends AppController
     }
 
 
-
-
-
-
-    public function register(){
+    public function register()
+    {
         $mapper = new UserMapper();
 
         $user = null;
 
         if ($this->isPost()) {
 
-            $mapper->addUser($_POST['name'],$_POST['surname'],$_POST['email'],$_POST['password']);
+            $mapper->addUser($_POST['name'], $_POST['surname'], $_POST['email'], md5($_POST['password']));
         }
 
         $this->render('register');
     }
-
-
-
-
 
 
     public function logout()

@@ -30,15 +30,20 @@ class UserMapper
     public function addUser($name, $surname, $email, $password)
     {
         try {
-            $stmt = $this->database->connect()->prepare('insert into mszymanski.Users (email,password,name,surname) values (:email, :password, :name, :surname)');
+            $pdo = $this->database->connect();
+            $stmt = $pdo->prepare('insert into mszymanski.Users (email,password,name,surname) values (:email, :password, :name, :surname)');
             $stmt->bindParam(':name', $name, PDO::PARAM_STR);
             $stmt->bindParam(':surname', $surname, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+
+            $pdo->beginTransaction();
             $stmt->execute();
+            $pdo->commit();
 
 
         } catch (PDOException $e) {
+
             return 'Error: ' . $e->getMessage();
         }
     }
